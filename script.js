@@ -19,6 +19,8 @@ document.getElementById('generate').addEventListener('click', function () {
     max = max * decimalPlaces;
     const randomNumber = generateRandomNumber(min, max, decimalPlaces);
     previous.push(randomNumber);
+    document.getElementById('progress').min = previous.length;
+    document.getElementById('progress').max = max + 1;
     document.getElementById('result').textContent = `Random number: ${randomNumber}`;
     document.getElementById('previous').textContent = `Previous numbers: ${previous.join(', ')}`;
 });
